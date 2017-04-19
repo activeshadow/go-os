@@ -52,4 +52,5 @@ type Option func(o *Options)
 var (
 	DefaultNamespace     = "micro"
 	DefaultBatchInterval = time.Second * 5
+	DefaultDialTimeout   = time.Second * 5
 )

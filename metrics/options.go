@@ -9,6 +9,7 @@ type Options struct {
 	Fields        Fields
 	Collectors    []string
 	BatchInterval time.Duration
+	DialTimeout   time.Duration
 }
 
 func BatchInterval(b time.Duration) Option {
@@ -32,5 +33,11 @@ func Namespace(n string) Option {
 func WithFields(f Fields) Option {
 	return func(o *Options) {
 		o.Fields = f
+	}
+}
+
+func DialTimeout(t time.Duration) Option {
+	return func(o *Options) {
+		o.DialTimeout = t
 	}
 }
